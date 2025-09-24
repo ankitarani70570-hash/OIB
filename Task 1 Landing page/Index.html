@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GlowMuse | Radiance Face Serum</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-images">
+      <img src="serum.jpg" alt="GlowMuse Radiance Serum bottle on pink background" />
+      <img src="Model.jpg" alt="Model applying GlowMuse serum to face" />
+    </div>
+
+    <h1>GlowMuse Radiance Serum</h1>
+    <p>Revitalize your skin with our all-natural, deeply hydrating serum for a lasting glow.</p>
+
+    <div class="cta-top">
+      <button onclick="window.scrollTo(0, document.body.scrollHeight)">Try It Today</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="features">
+      <div class="feature">
+        <h3>✨ Deep Hydration</h3>
+        <p>Penetrates deep to nourish and hydrate even the driest skin.</p>
+      </div>
+      <div class="feature">
+        <h3>🌿 Natural Ingredients</h3>
+        <p>Formulated with aloe, vitamin C, hyaluronic acid, and botanical oils.</p>
+      </div>
+      <div class="feature">
+        <h3>💖 Anti-Aging Formula</h3>
+        <p>Reduces fine lines and wrinkles with consistent use.</p>
+      </div>
+    </div>
+
+    <div class="testimonial">
+      <h2>What Our Customers Say</h2>
+      <p>"GlowMuse serum made my skin glow in just a week!"</p>
+      <p><strong>– Ashvi R.</strong></p>
+    </div>
+
+    <div class="cta">
+      <button onclick="openModal('signupModal')">Sign Up</button>
+      <button onclick="openModal('loginModal')">Login</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 GlowMuse. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a> |
+      <a href="mailto:info@glowmuse.com">Email</a> |
+      <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </footer>
+
+  <!-- Sign Up Modal -->
+  <div class="modal" id="signupModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('signupModal')">&times;</span>
+      <h2>Create Account</h2>
+      <form>
+        <input type="text" placeholder="Full Name" required />
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit">Sign Up</button>
+        <p>Already have an account? <a href="#" onclick="switchModal('signupModal','loginModal')">Login</a></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Login Modal -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('loginModal')">&times;</span>
+      <h2>Login</h2>
+      <form>
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+        <p>Don't have an account? <a href="#" onclick="switchModal('loginModal','signupModal')">Sign Up</a></p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = 'flex';
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+
+    function switchModal(closeId, openId) {
+      closeModal(closeId);
+      openModal(openId);
+    }
+
+    window.onclick = function(event) {
+      if (event.target.classList.contains('modal')) {
+        event.target.style.display = 'none';
+      }
+    }
+  </script>
+
+</body>
+</html>
